@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saudações</title>
+    <script src="scriptSaudacao.js"></script>
+</head>
+<body>
+    <h1>Saudação, estrangeiro!</h1>
+
+    <label for="idioma">Selecione o seu idioma:</label>
+    <select name="idioma" id="idioma">
+        <option value="portugues">Português</option>
+        <option value="ingles">Inglês</option>
+        <option value="espanhol">Espanhol</option>
+    </select>
+
+    <button onclick="saudar()">Saudar estrangeiro</button>
+
+    <p id="saudacao"></p>
+</body>
+</html>

@@ -7,10 +7,14 @@
     <script src="script.js"></script>
 </head>
 <body>
-    <h1>Calculadora de aprovação</h1>
-    <label>Digite a nota do aluno:</label>
-    <input type="text" id="nota">
-    <button onclick="verificarAprovacao()">Verificar nota</button>
+    <h1>Calculadora básica</h1>
+    <p>Operadores possíveis: +, -, * ou /</p>
+
+    <input type="text" id="num1" placeholder="Primeiro número">
+    <input type="text" id="num2" placeholder="Segundo número">
+    <input type="text" id="operador" placeholder="Operador">
+    <button onclick="efetuarOperacao()">Efetuar operação</button>
+    
     <p id="resultado"></p>
 </body>
 </html>
