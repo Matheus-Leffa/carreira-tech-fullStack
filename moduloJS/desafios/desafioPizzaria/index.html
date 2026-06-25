@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria</title>
+</head>
+<body>
+    <h1>Leffa's Pizza</h1>
+
+    <h3>Cardápio</h3>
+    <ul>
+        <li>1 - Pizza de calabresa</li>
+        <li>2 - Pizza de quatro queijos</li>
+        <li>3 - Pizza de frango com catupiry</li>
+        <li>4 - Pizza de brigadeiro</li>
+    </ul>
+    
+    <label>Digite o número da pizza que você quer:</label>
+    <input type="text" id="numPizza">
+    <button onclick="pedirPizza(document.getElementById('numPizza').value)">Enviar pedido</button>
+    <p id="conteudo"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
