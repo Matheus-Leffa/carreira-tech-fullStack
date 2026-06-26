@@ -23,12 +23,15 @@ let vezDoX = true;
 document.getElementById("botaoReiniciar").addEventListener('click', iniciarJogo);
 
 function iniciarJogo(){
+
+    vezDoX = true;
+
+    limparArrayTabuleiro();
+
     celulas.forEach(celula =>{
         celula.textContent = "";
         celula.addEventListener('click', tratarClique, {once:true});
     })
-
-    limparArrayTabuleiro();
 }
 
 function tratarClique(evento) {
@@ -43,7 +46,7 @@ function tratarClique(evento) {
 
     vezDoX = !vezDoX;
 
-    verificarVitoria(tabuleiro);
+    verificarVitoria();
 }
 
 function limparArrayTabuleiro(){
@@ -55,8 +58,35 @@ function limparArrayTabuleiro(){
 
 }
 
-function verificarVitoria(tabuleiro){
-    
+function verificarVitoria(){
+
+    for(let i = 0; i < combinacoesVitoria.length; i++){
+        const combinacao = combinacoesVitoria[i];
+        const a = combinacao[0];
+        const b = combinacao[1];
+        const c = combinacao[2];
+
+        if(tabuleiro[a] != "" && tabuleiro[a] === tabuleiro[b] && tabuleiro[b] === tabuleiro[c]){
+            alert(`Jogador ${tabuleiro[a]} venceu!`);
+            iniciarJogo();
+            break;
+        }
+        if (verificarEmpate()) {
+        alert("Empate!");
+        iniciarJogo();
+        }
+    }
+}
+
+function verificarEmpate(){
+
+    for(let i = 0; i < tabuleiro.length; i++){
+        if(tabuleiro[i] === ""){
+            return false;
+        }
+    }
+
+    return true;
 }
 
 iniciarJogo();
